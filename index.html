@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - João Bosco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+
+ <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Olá, como vai? Sou João Bosco.</h1>
+                <p>Programador Front-End estudando para criar experiências digitais incríveis.</p>
+                <a href="#portfolio" class="btn">Veja meus projetos</a>
+                
+            </div>
+            <div class="hero-image">
+
+            <img src="./imagens/perfil.jpg" alt="Seu retrato">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sobre Mim -->
+    <section id="about" class="about" data-aos="fade-up">
+        <h2>Sobre Mim</h2>
+        <p>Sou apaixonado por criar interfaces modernas, acessíveis e responsivas. Tenho experiência em tecnologias como HTML, CSS, JavaScript e frameworks como React.</p>
+    </section>
+
+    <section id="portfolio" class="portfolio" data-aos="fade-up">
+    <h2>Meus Projetos</h2>
+    <div id="portfolio-grid" class="portfolio-grid">
+            <div class="project-card">
+                <img src="./imagens/singles.jpg" alt="Projeto 1">
+                <h3>Projeto Singles Bar</h3>
+                <p>Um site feito a mão, totalmente do 0.
+                    O site tem o intuito de retratar um bar temático
+                    fictício
+                    que relembra todo glamour e nostalgia dos anos 40.
+                </p>
+                <a href="https://joaobosco25.github.io/Singles_Bar/" class="btn">Ver o Singles</a>
+            </div>
+            <div class="project-card">
+                <img src="./imagens/foto-rodrigo-studio.jpg" alt="Projeto 2">
+                <h3>Projeto Rodrigo Studio</h3>
+                <p>Página modelo profissional que desenvolvi para um salão de beleza, 
+                    baseado em um salão real. Assim
+                    como o Singles, continuo estudando para aprimorar as funcionalidades
+                </p>
+                <a href="https://joaobosco25.github.io/rodrigostudio/" class="btn">Ver Rodrigo Studio</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="github-projects" class="github-projects">
+        <h2>Repositórios do GitHub</h2>
+        <p>Estes são os projetos mais destacados. Você pode buscar outros repositórios na barra abaixo.
+            Caso você queira ver todos disponíveis, peço que fique a vontade. Para 
+            facilitar sua experiência, <strong>basta digitar qualquer letra na barra de pesquisa e apagar</strong>. 
+            Aparecerão todos os projetos, dos mais simples, aos mais recentes. 
+        </p>
+        <input type="text" id="repo-search" placeholder="Buscar repositório..." class="repo-search">
+        <div id="repos-grid" class="repos-grid"></div>
+    </section>
+    
+    
+
+    <button id="scrollTop" class="scroll-top">↑</button>
+    <script>
+    const scrollTopButton = document.getElementById("scrollTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            scrollTopButton.style.display = "flex";
+        } else {
+            scrollTopButton.style.display = "none";
+        }
+    });
+
+    scrollTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2024 Joao Bosco FRONT. Todos os direitos reservados.</p>
+        <ul class="social-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
