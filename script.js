@@ -68,3 +68,21 @@ fetch("https://api.github.com/users/joaobosco25/repos")
         console.error("Erro ao carregar repositórios:", error);
         reposGrid.innerHTML = "<p>Não foi possível carregar os repositórios.</p>";
     });
+
+    const navItems = document.querySelectorAll('.nav-item');
+navItems.forEach(item => {
+    if (item.href === window.location.href) {
+        item.classList.add('active');
+    }
+});
+
+const menuToggle = document.getElementById("menu-toggle");
+const sidebar = document.getElementById("sidebar");
+
+// Alterna a classe "open" na sidebar ao clicar no botão
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
+
+
+

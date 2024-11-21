@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim</title>
+    <link rel="stylesheet" href="sobre.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <header class="hero">
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+        <div class="hero-content">
+            <nav id="sidebar" class="sidebar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="sobre.html" class="nav-item active">Sobre Mim</a></li>
+                    <li><a href="diplomas.html" class="nav-item">Diplomas</a></li>
+                    <li><a href="objetivos.html" class="nav-item">Objetivos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Hero Section -->
+        <section class="hero-about">
+            <div class="hero-content">
+                <img src="./imagens/gato.png" alt="João Bosco e Gato" class="hero-image">
+                <h1><span>Sobre Mim</span></h1>
+                <p>Além de um grande entusiasta de gatos e um nerd das antigas, também 
+                    sou um grande fã da área de desenvolvimento e pretendo ser referência, no 
+                    futuro. 
+                    Me apaixonei pela programação, quando percebi
+                    o poder transformar algo que
+                    tenho em mente em um aplicativo ou site, exatamente do jeito que pensei e,
+                    principalmente, com o design que pensei. 
+                  
+                
+                </p>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline">
+            <h2>Minha Jornada</h2>
+            <div class="timeline-container">
+                <div class="timeline-item" data-aos="fade-right">
+                    <span class="timeline-date">2022</span>
+                    <h3>Comecei a Faculdade</h3>
+                    <p>Comecei a Facul de Gestão de T.I, mas aos poucos, fui percebendo que não era exatamente o que eu queria...</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <span class="timeline-date">2023</span>
+                    <h3>Primeiro curso Front-End</h3>
+                    <p>Fiz um curso livre no Youtube de desenvolvimento front end e foi ali que descobri minha paixão por programação e comecei a aprender HTML, CSS e JavaScript.</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <span class="timeline-date">2024</span>
+                    <h3>Primeiro Certificado Front-End</h3>
+                    <p>Um certificado de um nano curso Front End da Rocketseat, e meu primeiro cliente! (Rodrigo Studio)</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <span class="timeline-date">Atualmente</span>
+                    <h3>Continuando a crescer</h3>
+                    <p>Estou aprimorando minhas habilidades com frameworks modernos e projetos complexos, fazendo uma pós em desenvolvimento Front End e inúmeros cursos no Youtube.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" data-aos="fade-up">
+            <h2>Minhas Habilidades</h2>
+            <div class="skill">
+                <span>HTML</span>
+                <div class="skill-bar" style="width: 90%;"></div>
+            </div>
+            <div class="skill">
+                <span>CSS</span>
+                <div class="skill-bar" style="width: 80%;"></div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="skill-bar" style="width: 70%;"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const sidebar = document.getElementById("sidebar");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+        });
+    </script>
+</body>
+</html>

@@ -338,6 +338,118 @@ p {
     border-color: #101a25;
 }
 
+/* Estilo geral para a navbar */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente no desktop */
+    gap: 2rem; /* Espaçamento entre os itens */
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%; /* Garante que ocupe a largura total */
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Alinha os itens horizontalmente */
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsividade para o menu lateral no mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none; /* Esconde a navbar padrão no mobile */
+    }
+}
 
 
 
+/* Botão de três pontinhos */
+.menu-toggle {
+    display: none; /* Só será exibido no mobile */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Estilo para a sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Oculta a sidebar fora da tela */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(to right, #66140ee7, #0c3057e3);
+    padding: 1rem;
+    transition: left 0.3s ease; /* Animação para abrir e fechar */
+    z-index: 999;
+}
+
+.sidebar.open {
+    left: 0; /* Move a sidebar para dentro da tela */
+}
+
+.sidebar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3.8rem;
+}
+
+.sidebar .nav-item {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 3.5rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar .nav-item:hover {
+    color: #ffd700; /* Destaque ao passar o mouse */
+}
+
+/* Oculta a navbar padrão no mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Exibe os três pontinhos no mobile */
+    }
+
+    .navbar {
+        display: none; /* Esconde a navbar padrão */
+    }
+}
