@@ -82,3 +82,29 @@ function init() {
 
 // Chamar a inicialização
 init();
+
+
+document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Previne o recarregamento da página
+
+    // Pegue os dados do formulário
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    // Substitua pelo número do WhatsApp que receberá a mensagem
+    const whatsappNumber = "5532984560451"; // Coloque seu número com código do país (ex: 55 para Brasil)
+
+    // Crie o link de redirecionamento
+    const whatsappURL = `https://wa.me/${5532984560451}?text=Olá João, me chamo ${encodeURIComponent(
+        name
+    )}.%0A${encodeURIComponent(message)}%0AMeu telefone é ${encodeURIComponent(phone)}.`;
+
+    // Redirecione o usuário para o WhatsApp
+    window.open(whatsappURL, "_blank");
+});
+
+
+
+
+
