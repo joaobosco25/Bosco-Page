@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplomas</title>
+    <link rel="stylesheet" href="diplomas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <nav id="sidebar" class="sidebar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="sobre.html" class="nav-item">Sobre Mim</a></li>
+                    <li><a href="diplomas.html" class="nav-item active">Diplomas</a></li>
+                    <li><a href="objetivos.html" class="nav-item">Objetivos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Hero Section -->
+        <section class="hero-diplomas">
+            <div class="hero-content">
+                <h1>Meus Diplomas e Certificados</h1>
+                <p>Explore um pouco da minha jornada profissional e o que estou fazendo atualmente.</p>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters">
+            <h2>Filtrar Diplomas</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="backend">Back</button>
+                <button class="filter-btn" data-category="gestao">Gestão e Desenvolvimento</button>
+                <button class="filter-btn" data-category="frontend">Front</button>
+            </div>
+        </section>
+        
+
+        <!-- Diplomas Section -->
+        <section class="diplomas" id="diplomas-grid">
+            <!-- Diplomas serão carregados dinamicamente pelo JavaScript -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Joao Bosco FRONT. Todos os direitos reservados.</p>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/jo%C3%A3o-bosco-ferreira-2a6b46225/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a></li>
+            <li><a href="https://github.com/joaobosco25">GitHub</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="diplomas.js"></script>
+</body>
+</html>

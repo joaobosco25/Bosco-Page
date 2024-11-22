@@ -85,4 +85,28 @@ menuToggle.addEventListener("click", () => {
 });
 
 
+const certificatesGrid = document.getElementById('certificates-grid');
+
+const certificates = [
+    {
+        title: 'Diploma de Desenvolvimento Web',
+        image: './imagens/diploma1.jpg',
+        institution: 'Alura'
+    },
+    {
+        title: 'Certificado de JavaScript Avançado',
+        image: './imagens/diploma2.jpg',
+        institution: 'Udemy'
+    }
+];
+
+certificates.forEach(cert => {
+    certificatesGrid.innerHTML += `
+        <div class="certificate-card">
+            <img src="${cert.image}" alt="${cert.title}">
+            <h3>${cert.title}</h3>
+            <p>${cert.institution}</p>
+        </div>
+    `;
+});
 

@@ -1,0 +1,281 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background: #f9f9f9;
+    overflow-x: hidden;
+}
+
+/* Header */
+header.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-item.active {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-diplomas {
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero-diplomas h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-diplomas p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Filters Section */
+.filters {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: #ffffff;
+}
+
+.filters h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.filter-btn {
+    background: linear-gradient(to right, #1f4037, #1c5a40);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(to right, #0c1a16, #072718);
+}
+
+.filter-btn.active {
+    background: linear-gradient(to right, #11241f, #072718);
+}
+
+/* Diplomas Section */
+.diplomas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.diploma-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    
+}
+
+.diploma-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.diploma-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.diploma-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 1rem 1rem;
+}
+
+.diploma-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ajustes para Mobile */
+@media (max-width: 768px) {
+    /* Header */
+    header.hero {
+        flex-direction: column;
+        height: auto; /* Ajusta a altura automaticamente */
+        text-align: center;
+    }
+
+    .navbar {
+        display: none; /* Esconde a navbar principal no mobile */
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        background: #333;
+        z-index: 999;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .nav-item {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero-diplomas {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-diplomas h1 {
+        font-size: 2rem;
+    }
+
+    .hero-diplomas p {
+        font-size: 1rem;
+    }
+
+    /* Filters Section */
+    .filters {
+        padding: 1.5rem 1rem;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap; /* Permite que os botões quebrem linha */
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        width: 35%; /* Botões ocupam a largura total no mobile */
+    }
+
+    /* Diplomas Section */
+    .diplomas {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta o layout da grade */
+        gap: 1rem; /* Reduz o espaçamento entre os itens */
+        padding: 1.5rem;
+    }
+
+    /* Esconder diplomas com a classe 'hidden-mobile' apenas no mobile */
+    .hidden-mobile {
+        display: none;
+    }
+
+
+    .diploma-card img {
+        height: 120px; /* Reduz a altura das imagens */
+    }
+
+    .diploma-card h3 {
+        font-size: 1rem;
+    }
+
+    .diploma-card p {
+        font-size: 0.9rem;
+    }
+    /* Esconde diplomas com a classe 'hidden-mobile' apenas no mobile */
+
+
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer .social-links a:hover {
+    color: #007bff;
+}
