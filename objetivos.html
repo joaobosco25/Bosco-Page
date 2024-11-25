@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos</title>
+    <link rel="stylesheet" href="objetivos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <nav id="sidebar" class="sidebar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item">Home</a></li>
+                    <li><a href="sobre.html" class="nav-item">Sobre</a></li>
+                    <li><a href="diplomas.html" class="nav-item">Diplomas</a></li>
+                    <li><a href="objetivos.html" class="nav-item active">Objetivos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Hero Section -->
+        <section class="hero-objetivos">
+            <div class="hero-content">
+                <h1>Meus Objetivos</h1>
+                <p>Descubra minhas metas de carreira e crescimento profissional!</p>
+            </div>
+        </section>
+
+        <!-- Sessão Dinâmica com JavaScript -->
+        <section class="dynamic-objectives">
+            <h2>Metas em Destaque</h2>
+            <div id="objectives-container" class="objectives-container">
+                <!-- Objetivos serão carregados dinamicamente pelo JavaScript -->
+            </div>
+        </section>
+
+        <!-- Sessão de Progresso -->
+        <section class="progress-section" data-aos="fade-up">
+            <h2>Minha Jornada</h2>
+            <p>Veja o progresso que tenho feito em direção aos meus objetivos!</p>
+            <div class="progress-bars">
+                <div class="progress-bar">
+                    <span>Front-End</span>
+                    <div class="progress" style="--progress: 85%;">
+                        <span class="progress-label">85%</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <span>Back-End</span>
+                    <div class="progress" style="--progress: 70%;">
+                        <span class="progress-label">70%</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <span>UI/UX Design</span>
+                    <div class="progress" style="--progress: 60%;">
+                        <span class="progress-label">60%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão Interativa -->
+        <section class="interactive-section">
+            <h2>Deixe sua Opinião</h2>
+            <p>Quais habilidades você acha que devo melhorar? Responda abaixo!</p>
+            <form id="feedback-form">
+                <input type="text" id="feedback-input" placeholder="Digite sua sugestão..." required>
+                <button type="submit">Enviar</button>
+            </form>
+            <ul id="feedback-list" class="feedback-list"></ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 João Bosco FRONT. Todos os direitos reservados.</p>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/jo%C3%A3o-bosco-ferreira-2a6b46225/">LinkedIn</a></li>
+            <li><a href="https://github.com/joaobosco25">GitHub</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Objetivos dinâmicos
+        const objectives = [
+            { title: "Aprender Node.js", description: "Dominar o desenvolvimento de back-end com Node.js." },
+            { title: "Contribuir para Open Source", description: "Participar de projetos colaborativos no GitHub." },
+            { title: "Lançar um App", description: "Desenvolver e publicar um aplicativo mobile." },
+        ];
+
+        const container = document.getElementById("objectives-container");
+        objectives.forEach((obj) => {
+            const div = document.createElement("div");
+            div.className = "objective-card";
+            div.innerHTML = `
+                <h3>${obj.title}</h3>
+                <p>${obj.description}</p>
+            `;
+            container.appendChild(div);
+        });
+
+        // Formulário de feedback
+        const feedbackForm = document.getElementById("feedback-form");
+        const feedbackList = document.getElementById("feedback-list");
+
+        feedbackForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const feedback = document.getElementById("feedback-input").value;
+            const listItem = document.createElement("li");
+            listItem.textContent = feedback;
+            feedbackList.appendChild(listItem);
+            feedbackForm.reset();
+        });
+    </script>
+</body>
+</html>

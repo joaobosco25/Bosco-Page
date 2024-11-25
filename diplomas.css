@@ -462,36 +462,56 @@ form button:hover {
 }
 
 /* Ajuste para exibir a navbar no mobile */
+/* Ajuste para exibir a navbar no mobile horizontalmente */
 @media (max-width: 768px) {
+    header.hero {
+        flex-direction: column; /* Mantém o layout do header no mobile */
+        height: auto; /* Ajusta a altura dinamicamente */
+    }
+
     .navbar {
         display: flex; /* Torna a navbar visível no mobile */
-        flex-direction: column; /* Alinha os itens verticalmente */
-        background: #203a43; /* Fundo da navbar */
-        padding: 1rem;
-        text-align: center;
-        position: static; /* Remove a posição fixa */
-        gap: 1rem; /* Espaçamento entre os itens */
+        flex-direction: row; /* Alinha os itens horizontalmente */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        background: transparent; /* Remove o fundo */
+        padding: 10px 0;
     }
 
     .nav-links {
-        flex-direction: column; /* Itens em coluna no mobile */
-        gap: 1rem;
-        width: 100%; /* Ocupa a largura total */
+        display: flex; /* Alinha os itens horizontalmente */
+        flex-direction: row; /* Alinha os itens em linha */
+        gap: 1px; /* Adiciona espaçamento entre os itens */
+        width: auto; /* Ajusta a largura ao conteúdo */
     }
 
     .nav-item {
         color: white;
-        padding: 0.5rem 0;
-        border-radius: 5px;
-        background: #2c5364; /* Fundo dos itens no mobile */
+        padding: 10px 15px; /* Adiciona preenchimento interno */
+        border-radius: 5px; /* Deixa as bordas arredondadas */
         transition: background 0.3s ease;
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
     }
 
     .nav-item:hover {
-        background: #1f4037; /* Efeito de hover no mobile */
+        background: #1f4037; /* Efeito de hover */
     }
 
     .nav-item.active {
         background: #007bff; /* Destaque para o item ativo */
     }
+
+    .menu-toggle {
+        display: none; /* Remove o botão de menu no mobile */
+    }
+
+    .sidebar {
+        display: block; /* Exibe o menu */
+        position: static; /* Remove comportamento de "fora da tela" */
+        background: transparent; /* Torna o fundo transparente */
+        width: auto; /* Ajusta a largura ao conteúdo */
+        height: auto; /* Altura ajustada ao conteúdo */
+    }
 }
+
+
